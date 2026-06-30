@@ -9,6 +9,7 @@ import { NoteList } from "@/components/notes/NoteList"
 export default function HomePage() {
   const router = useRouter()
   const [activeTag, setActiveTag] = useState<string | undefined>()
+  const [isCreateFormOpen, setIsCreateFormOpen] = useState(false)
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
@@ -20,11 +21,12 @@ export default function HomePage() {
     <div style={{ maxWidth: 800, margin: "0 auto", padding: "0 16px 48px" }}>
       <Header />
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-        <CreateNoteForm />
+        <CreateNoteForm open={isCreateFormOpen} onOpenChange={setIsCreateFormOpen} />
         <NoteList
           activeTag={activeTag}
           onTagClick={(tag) => setActiveTag(tag)}
           onClearTag={() => setActiveTag(undefined)}
+          isCreateFormOpen={isCreateFormOpen}
         />
       </div>
     </div>

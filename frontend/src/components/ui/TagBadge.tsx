@@ -1,3 +1,10 @@
+function formatTag(tag: string): string {
+  return tag
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join("")
+}
+
 interface TagBadgeProps {
   tag: string
   active?: boolean
@@ -20,7 +27,7 @@ export function TagBadge({ tag, active = false, onClick }: TagBadgeProps) {
         transition: "background 0.2s, color 0.2s",
       }}
     >
-      #{tag}
+      #{formatTag(tag)}
     </button>
   )
 }

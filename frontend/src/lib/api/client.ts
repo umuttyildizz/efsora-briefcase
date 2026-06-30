@@ -17,6 +17,10 @@ export async function request<T>(path: string, options: RequestInit = {}): Promi
   const res = await fetch(`${BASE}${path}`, { ...options, headers })
 
   if (res.status === 401) {
+    if (path === "/auth/login" || path === "/auth/register") {
+      const body = await res.json().catch(() => ({ error: "Unauthorized" }))
+      throw new Error((body as { error: string }).error)
+    }
     localStorage.removeItem("token")
     window.location.href = "/login"
     throw new Error("Unauthorized")

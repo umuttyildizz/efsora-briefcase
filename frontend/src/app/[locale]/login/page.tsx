@@ -26,7 +26,11 @@ export default function LoginPage() {
       localStorage.setItem("token", data.token)
       router.push("/")
     } catch (err) {
-      setError(err instanceof Error ? err.message : t("submit"))
+      if (err instanceof Error && err.message === "invalid credentials") {
+        setError(t("invalidCredentials"))
+      } else {
+        setError(err instanceof Error ? err.message : t("submit"))
+      }
     } finally {
       setLoading(false)
     }

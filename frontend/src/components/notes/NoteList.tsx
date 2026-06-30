@@ -13,9 +13,10 @@ interface NoteListProps {
   activeTag?: string
   onTagClick: (tag: string) => void
   onClearTag: () => void
+  isCreateFormOpen: boolean
 }
 
-export function NoteList({ activeTag, onTagClick, onClearTag }: NoteListProps) {
+export function NoteList({ activeTag, onTagClick, onClearTag, isCreateFormOpen }: NoteListProps) {
   const [searchValue, setSearchValue] = useState("")
   const t = useTranslations("notes")
   const { data: notes, isLoading, error } = useNotes(activeTag)
@@ -42,12 +43,14 @@ export function NoteList({ activeTag, onTagClick, onClearTag }: NoteListProps) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-      <Input
-        placeholder={t("searchPlaceholder")}
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-        onKeyDown={handleSearchKeyDown}
-      />
+      {!isCreateFormOpen && (
+        <Input
+          placeholder={t("searchPlaceholder")}
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          onKeyDown={handleSearchKeyDown}
+        />
+      )}
       {activeTag && (
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{ fontSize: 14, color: "#6b7280" }}>{t("filteredBy")}</span>

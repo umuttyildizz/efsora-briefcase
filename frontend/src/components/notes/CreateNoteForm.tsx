@@ -6,8 +6,12 @@ import { useCreateNote } from "@/hooks/useCreateNote"
 import { Input } from "@/components/ui/Input"
 import { Button } from "@/components/ui/Button"
 
-export function CreateNoteForm() {
-  const [open, setOpen] = useState(false)
+interface CreateNoteFormProps {
+  open: boolean
+  onOpenChange: (open: boolean) => void
+}
+
+export function CreateNoteForm({ open, onOpenChange }: CreateNoteFormProps) {
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
   const t = useTranslations("notes")
@@ -22,7 +26,7 @@ export function CreateNoteForm() {
         onSuccess: () => {
           setTitle("")
           setContent("")
-          setOpen(false)
+          onOpenChange(false)
         },
       }
     )
@@ -30,7 +34,7 @@ export function CreateNoteForm() {
 
   if (!open) {
     return (
-      <Button onClick={() => setOpen(true)}>
+      <Button onClick={() => onOpenChange(true)}>
         + {t("newNote")}
       </Button>
     )
@@ -97,7 +101,7 @@ export function CreateNoteForm() {
           <Button
             type="button"
             variant="secondary"
-            onClick={() => setOpen(false)}
+            onClick={() => onOpenChange(false)}
             style={{ minWidth: 110 }}
           >
             {t("cancel")}

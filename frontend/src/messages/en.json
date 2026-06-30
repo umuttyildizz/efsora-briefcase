@@ -14,7 +14,8 @@
       "passwordPlaceholder": "••••••",
       "submit": "Sign in",
       "noAccount": "No account?",
-      "registerLink": "Register"
+      "registerLink": "Register",
+      "invalidCredentials": "Invalid email or password"
     },
     "register": {
       "title": "BriefBase",

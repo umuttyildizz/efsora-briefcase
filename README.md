@@ -88,13 +88,18 @@ Migration'ları Docker üzerinden çalıştırmak için:
 docker compose run --rm backend node dist/scripts/run-migrations.js
 ```
 
-> **Not:** Bu proje Windows ortamında Docker Desktop ile geliştirilmektedir. Yerel sanallaştırma kısıtlamaları nedeniyle Docker kurulumu hâlâ test aşamasındadır. Dockerfile, `docker-compose.yml` ve migration altyapısı hazır ve çalışır durumdadır; production deploy Railway/Render gibi Linux tabanlı bir ortamda sorunsuz çalışır.
+> `docker compose up --build` komutu ile backend ve postgres servisleri sorunsuz ayağa kalkmaktadır. `/health` endpoint'i doğrulanmıştır. Local stack tam olarak test edilmiş ve çalışır durumdadır.
 
 ---
 
 ## Test Account
 
-Bu proje için önceden oluşturulmuş bir test hesabı yoktur; lütfen `/register` sayfasından yeni bir hesap oluşturun.
+| Field | Value |
+|---|---|
+| Email | `railway-test@test.com` |
+| Password | `123456` |
+
+Bu hesap production Neon veritabanına kayıtlıdır. Hem Railway backend hem de local backend aynı veritabanını kullandığından her iki ortamda da geçerlidir.
 
 ---
 
@@ -102,8 +107,8 @@ Bu proje için önceden oluşturulmuş bir test hesabı yoktur; lütfen `/regist
 
 | | URL |
 |---|---|
-| Frontend (Vercel) | TODO |
-| Backend | TODO |
+| Frontend (Vercel) | https://efsora-briefcase.vercel.app |
+| Backend (Railway) | https://laudable-quietude-production.up.railway.app |
 
 ---
 
@@ -133,9 +138,8 @@ TODO — Loom / YouTube link
 - [x] Multi-language UI: English and Turkish (next-intl)
 - [x] Language preference persisted in localStorage
 - [x] TypeORM schema managed via versioned migrations (no raw SQL)
-- [ ] Live deployment URL
-
-Deployment adımları tamamlandığında bu liste güncellenecektir.
+- [x] Docker Compose local stack verified (`docker compose up --build`, `/health` confirmed)
+- [x] Live deployment URL
 
 ---
 

@@ -14,7 +14,8 @@
       "passwordPlaceholder": "••••••",
       "submit": "Giriş Yap",
       "noAccount": "Hesabınız yok mu?",
-      "registerLink": "Kayıt Ol"
+      "registerLink": "Kayıt Ol",
+      "invalidCredentials": "E-posta veya şifre hatalı"
     },
     "register": {
       "title": "BriefBase",
