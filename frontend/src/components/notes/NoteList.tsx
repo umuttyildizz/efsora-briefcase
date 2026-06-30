@@ -51,6 +51,10 @@ export function NoteList({ activeTag, onTagClick, onClearTag, isCreateFormOpen }
           onKeyDown={handleSearchKeyDown}
         />
       )}
+      {deleteMutation.isError && (
+        <p style={{ margin: 0, fontSize: 14, color: "#dc2626" }}>{t("deleteFailed")}</p>
+      )}
+
       {activeTag && (
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{ fontSize: 14, color: "#6b7280" }}>{t("filteredBy")}</span>

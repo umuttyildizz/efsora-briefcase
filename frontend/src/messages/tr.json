@@ -26,7 +26,8 @@
       "passwordPlaceholder": "Min. 6 karakter",
       "submit": "Hesap Oluştur",
       "hasAccount": "Zaten hesabınız var mı?",
-      "loginLink": "Giriş Yap"
+      "loginLink": "Giriş Yap",
+      "emailInUse": "Bu e-posta adresi zaten kayıtlı"
     }
   },
   "notes": {
@@ -46,6 +47,8 @@
     "filteredBy": "Filtrelendi:",
     "clearFilter": "Temizle",
     "loading": "Notlar yükleniyor...",
-    "error": "Notlar yüklenemedi."
+    "error": "Notlar yüklenemedi.",
+    "deleteFailed": "Not silinemedi",
+    "contentTooLong": "İçerik maksimum 20.000 karakter sınırını aşıyor"
   }
 }

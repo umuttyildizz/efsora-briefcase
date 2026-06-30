@@ -9,5 +9,8 @@ export function useDeleteNote() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["notes"] })
     },
+    onError: (error: Error) => {
+      console.error("Failed to delete note:", error)
+    },
   })
 }

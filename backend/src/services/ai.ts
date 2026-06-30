@@ -20,12 +20,14 @@ function parseAiResponse(text: string): AiResult | null {
 }
 
 export async function generateSummaryAndTags(content: string): Promise<AiResult | null> {
+  const truncatedContent = content.slice(0, 20000)
+
   const prompt = `Summarize the following text in exactly 2 sentences and provide 3 to 5 short lowercase tags.
 Return ONLY a raw JSON object with no markdown, no explanation, no code blocks.
 Format: {"summary":"your summary","tags":["tag1","tag2","tag3"]}
 
 Text:
-${content}`
+${truncatedContent}`
 
   try {
     const message = await client.messages.create({

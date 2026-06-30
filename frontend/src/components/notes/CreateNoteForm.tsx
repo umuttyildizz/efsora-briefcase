@@ -58,7 +58,7 @@ export function CreateNoteForm({ open, onOpenChange }: CreateNoteFormProps) {
 
       {error && (
         <p style={{ margin: 0, fontSize: 14, color: "#dc2626" }}>
-          {error.message}
+          {error.message === "content exceeds maximum length" ? t("contentTooLong") : error.message}
         </p>
       )}
 
@@ -81,6 +81,7 @@ export function CreateNoteForm({ open, onOpenChange }: CreateNoteFormProps) {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             required
+            maxLength={20000}
             rows={6}
             style={{
               padding: "8px 12px",

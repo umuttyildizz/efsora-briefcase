@@ -9,6 +9,12 @@ router.use(authMiddleware)
 
 const noteRepo = () => AppDataSource.getRepository(Note)
 
+const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+
+function isValidUuid(id: string): boolean {
+  return UUID_PATTERN.test(id)
+}
+
 router.get("/", async (req: AuthRequest, res: Response): Promise<void> => {
   const { tag } = req.query as { tag?: string }
 
@@ -30,6 +36,11 @@ router.post("/", async (req: AuthRequest, res: Response): Promise<void> => {
 
   if (!content || content.trim().length === 0) {
     res.status(400).json({ error: "content is required" })
+    return
+  }
+
+  if (content.trim().length > 20000) {
+    res.status(400).json({ error: "content exceeds maximum length" })
     return
   }
 
@@ -57,6 +68,11 @@ router.post("/", async (req: AuthRequest, res: Response): Promise<void> => {
 router.delete("/:id", async (req: AuthRequest, res: Response): Promise<void> => {
   const noteId = String(req.params.id)
 
+  if (!isValidUuid(noteId)) {
+    res.status(400).json({ error: "invalid note id" })
+    return
+  }
+
   const note = await noteRepo().findOne({
     where: { id: noteId, user_id: req.userId },
   })
@@ -72,6 +88,11 @@ router.delete("/:id", async (req: AuthRequest, res: Response): Promise<void> => 
 
 router.post("/:id/summarize", async (req: AuthRequest, res: Response): Promise<void> => {
   const noteId = String(req.params.id)
+
+  if (!isValidUuid(noteId)) {
+    res.status(400).json({ error: "invalid note id" })
+    return
+  }
 
   const note = await noteRepo().findOne({
     where: { id: noteId, user_id: req.userId },

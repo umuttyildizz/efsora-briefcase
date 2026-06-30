@@ -26,7 +26,8 @@
       "passwordPlaceholder": "Min. 6 characters",
       "submit": "Create account",
       "hasAccount": "Already have an account?",
-      "loginLink": "Sign in"
+      "loginLink": "Sign in",
+      "emailInUse": "This email is already registered"
     }
   },
   "notes": {
@@ -46,6 +47,8 @@
     "filteredBy": "Filtered by:",
     "clearFilter": "Clear",
     "loading": "Loading notes...",
-    "error": "Failed to load notes."
+    "error": "Failed to load notes.",
+    "deleteFailed": "Failed to delete note",
+    "contentTooLong": "Content exceeds maximum length of 20,000 characters"
   }
 }

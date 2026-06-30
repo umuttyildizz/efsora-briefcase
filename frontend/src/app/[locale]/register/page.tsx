@@ -26,7 +26,11 @@ export default function RegisterPage() {
       localStorage.setItem("token", data.token)
       router.push("/")
     } catch (err) {
-      setError(err instanceof Error ? err.message : t("submit"))
+      if (err instanceof Error && err.message === "email already in use") {
+        setError(t("emailInUse"))
+      } else {
+        setError(err instanceof Error ? err.message : t("submit"))
+      }
     } finally {
       setLoading(false)
     }
