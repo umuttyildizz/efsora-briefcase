@@ -120,7 +120,7 @@ This project uses **Anthropic Claude** (`claude-haiku-4-5`) for note summarizati
 
 ## Demo Video
 
-TODO — Loom / YouTube link
+https://www.loom.com/share/a9afed3eb99443a7b33fa5ada1201eb4
 
 ---
 
