@@ -36,11 +36,11 @@ An AI-powered note-taking app that automatically generates summaries and tags fo
 ```bash
 cd backend
 npm install
-cp ../.env.example .env    # veya elle oluştur (aşağıdaki tabloya bak)
+cp ../.env.example .env    # or create manually (see table below)
 npm run dev                # ts-node-dev, port 4000
 ```
 
-Migration'ları çalıştırmak için (ilk kurulumda):
+Run migrations (first-time setup):
 
 ```bash
 npm run migration:run
@@ -51,7 +51,7 @@ npm run migration:run
 ```bash
 cd frontend
 npm install
-# .env.local oluştur (aşağıdaki tabloya bak)
+# create .env.local (see table below)
 npm run dev                # Next.js, port 3000
 ```
 
@@ -82,13 +82,13 @@ npm run dev                # Next.js, port 3000
 docker compose up -d
 ```
 
-Migration'ları Docker üzerinden çalıştırmak için:
+Run migrations via Docker:
 
 ```bash
 docker compose run --rm backend node dist/scripts/run-migrations.js
 ```
 
-> `docker compose up --build` komutu ile backend ve postgres servisleri sorunsuz ayağa kalkmaktadır. `/health` endpoint'i doğrulanmıştır. Local stack tam olarak test edilmiş ve çalışır durumdadır.
+> `docker compose up --build` starts the backend and postgres services without issues. The `/health` endpoint has been verified. The local stack is fully tested and operational.
 
 ---
 
@@ -99,7 +99,7 @@ docker compose run --rm backend node dist/scripts/run-migrations.js
 | Email | `railway-test@test.com` |
 | Password | `123456` |
 
-Bu hesap production Neon veritabanına kayıtlıdır. Hem Railway backend hem de local backend aynı veritabanını kullandığından her iki ortamda da geçerlidir.
+This account is registered in the production Neon database. Both the Railway backend and the local backend connect to the same database, so the credentials are valid in either environment.
 
 ---
 
