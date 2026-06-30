@@ -85,7 +85,7 @@ docker compose up -d
 Migration'ları Docker üzerinden çalıştırmak için:
 
 ```bash
-docker compose run --rm backend node dist/migrations/run.js
+docker compose run --rm backend node dist/scripts/run-migrations.js
 ```
 
 > **Not:** Bu proje Windows ortamında Docker Desktop ile geliştirilmektedir. Yerel sanallaştırma kısıtlamaları nedeniyle Docker kurulumu hâlâ test aşamasındadır. Dockerfile, `docker-compose.yml` ve migration altyapısı hazır ve çalışır durumdadır; production deploy Railway/Render gibi Linux tabanlı bir ortamda sorunsuz çalışır.
