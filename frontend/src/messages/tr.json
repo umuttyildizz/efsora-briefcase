@@ -1,0 +1,50 @@
+{
+  "common": {
+    "appName": "BriefBase",
+    "logout": "Çıkış Yap",
+    "loading": "Yükleniyor..."
+  },
+  "auth": {
+    "login": {
+      "title": "BriefBase",
+      "subtitle": "Hesabınıza giriş yapın",
+      "email": "E-posta",
+      "emailPlaceholder": "siz@ornek.com",
+      "password": "Şifre",
+      "passwordPlaceholder": "••••••",
+      "submit": "Giriş Yap",
+      "noAccount": "Hesabınız yok mu?",
+      "registerLink": "Kayıt Ol"
+    },
+    "register": {
+      "title": "BriefBase",
+      "subtitle": "Hesabınızı oluşturun",
+      "email": "E-posta",
+      "emailPlaceholder": "siz@ornek.com",
+      "password": "Şifre",
+      "passwordPlaceholder": "Min. 6 karakter",
+      "submit": "Hesap Oluştur",
+      "hasAccount": "Zaten hesabınız var mı?",
+      "loginLink": "Giriş Yap"
+    }
+  },
+  "notes": {
+    "newNote": "Yeni Not",
+    "title": "Başlık (isteğe bağlı)",
+    "titlePlaceholder": "Bir başlık girin...",
+    "content": "İçerik",
+    "contentPlaceholder": "Metninizi buraya yapıştırın...",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "empty": "Henüz not yok. İlk notunuzu oluşturun!",
+    "summary": "Özet:",
+    "generatingSummary": "Özet oluşturuluyor...",
+    "resummarize": "Yeniden Özetle",
+    "delete": "Sil",
+    "searchPlaceholder": "Etikete göre ara...",
+    "filteredBy": "Filtrelendi:",
+    "clearFilter": "Temizle",
+    "loading": "Notlar yükleniyor...",
+    "error": "Notlar yüklenemedi."
+  }
+}

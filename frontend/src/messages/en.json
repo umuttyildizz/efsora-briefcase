@@ -1,0 +1,50 @@
+{
+  "common": {
+    "appName": "BriefBase",
+    "logout": "Log out",
+    "loading": "Loading..."
+  },
+  "auth": {
+    "login": {
+      "title": "BriefBase",
+      "subtitle": "Sign in to your account",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••",
+      "submit": "Sign in",
+      "noAccount": "No account?",
+      "registerLink": "Register"
+    },
+    "register": {
+      "title": "BriefBase",
+      "subtitle": "Create your account",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Min. 6 characters",
+      "submit": "Create account",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in"
+    }
+  },
+  "notes": {
+    "newNote": "New Note",
+    "title": "Title (optional)",
+    "titlePlaceholder": "Enter a title...",
+    "content": "Content",
+    "contentPlaceholder": "Paste your text here...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "empty": "No notes yet. Create your first one!",
+    "summary": "Summary:",
+    "generatingSummary": "Generating summary...",
+    "resummarize": "Re-summarize",
+    "delete": "Delete",
+    "searchPlaceholder": "Search by tag...",
+    "filteredBy": "Filtered by:",
+    "clearFilter": "Clear",
+    "loading": "Loading notes...",
+    "error": "Failed to load notes."
+  }
+}
